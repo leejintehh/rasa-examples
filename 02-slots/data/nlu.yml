@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.1"
 nlu:
 - intent: greet
   examples: |
@@ -16,9 +16,9 @@ nlu:
     - goodevening
     - good afternoon
     - hi there
+
 - intent: goodbye
   examples: |
-    - good afternoon
     - cu
     - good by
     - cee you later
@@ -30,87 +30,148 @@ nlu:
     - bye bye
     - see you later
     - thanks, bye
+    - quit
+    - close
+
 - intent: affirm
   examples: |
+    - ye
+    - yep
     - yes
+    - ok
+    - yes pls
+    - sure
+    - ya
+    - go ahead
+    - proceed
     - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+
 - intent: deny
   examples: |
     - no
+    - nah
+    - im good
+    - dont want
+    - noo
     - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-- intent: mood_great
+
+- intent: check_order
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-    - good
-- intent: mood_unhappy
+    - what is my food order
+    - tell me my food order
+    - do you know my food order
+    - repeat my food order
+    - what is my order
+    - tell me my order
+    - do you know my order
+    - repeat my order
+    - check order
+    - check my order
+
+- intent: 
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-    - i am sad
-- intent: bot_challenge
+    - order food
+    - order
+    - buy food
+    - submit order
+    - send order
+
+- intent: food_order
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-- intent: ask_me_anything
-  examples: |
-    - ask me anything
-    - would you like to ask me something
-    - feel free to ask me about things
-    - want to ask me something?
-- intent: repeat_shirt_size
-  examples: |
-    - what is my shirt size
-    - tell me my shirt size
-    - do you know my shirt size
-    - repeat my shirt size
-- intent: give_shirt_size
-  examples: |
-    - i want a [large](shirt_size) shirt
-    - [medium](shirt_size) size
-    - give me a [small](shirt_size) tshirt
-    - [small](shirt_size)
-    - [medium](shirt_size)
-    - [large](shirt_size)
-    - i'd prefer [medium](shirt_size) size
-    - gimme gimme gimme [small](shirt_size) tshirt
-    - give shirt size
-    - i want a [large](shirt_size) shirt please
-    - i want to give you my shirt
-    - [large](shirt_size)
+    - i want [one](food_quantity) [pizza](food_item) 
+    - ill have [one](food_quantity) [pizza](food_item)
+    - [one](food_quantity) [pizza](food_item) please
+    - [one](food_quantity) [pizza](food_item) thank you
+    - i want [one](food_quantity) [burger](food_item) 
+    - ill have [one](food_quantity) [burger](food_item)
+    - [one](food_quantity) [burger](food_item) please
+    - [one](food_quantity) [burger](food_item) thank you
+    - i want [one](food_quantity) [bun](food_item) 
+    - ill have [one](food_quantity) [bun](food_item)
+    - [one](food_quantity) [bun](food_item) please
+    - [one](food_quantity) [bun](food_item) thank you
+    - i want [one](food_quantity) [noodles](food_item) 
+    - ill have [one](food_quantity) [noodles](food_item)
+    - [one](food_quantity) [noodles](food_item) please
+    - [one](food_quantity) [noodles](food_item) thank you
+    - i want [two](food_quantity) [pizza](food_item) 
+    - ill have [two](food_quantity) [pizza](food_item)
+    - [two](food_quantity) [pizza](food_item) please
+    - [two](food_quantity) [pizza](food_item) thank you
+    - i want [two](food_quantity) [burger](food_item) 
+    - ill have [two](food_quantity) [burger](food_item)
+    - [two](food_quantity) [burger](food_item) please
+    - [two](food_quantity) [burger](food_item) thank you
+    - i want [two](food_quantity) [bun](food_item) 
+    - ill have [two](food_quantity) [bun](food_item)
+    - [two](food_quantity) [bun](food_item) please
+    - [two](food_quantity) [bun](food_item) thank you
+    - i want [two](food_quantity) [noodles](food_item) 
+    - ill have [two](food_quantity) [noodles](food_item)
+    - [two](food_quantity) [noodles](food_item) please
+    - [two](food_quantity) [noodles](food_item) thank you
+    - i want [three](food_quantity) [pizza](food_item) 
+    - ill have [three](food_quantity) [pizza](food_item)
+    - [three](food_quantity) [pizza](food_item) please
+    - [three](food_quantity) [pizza](food_item) thank you
+    - i want [three](food_quantity) [burger](food_item) 
+    - ill have [three](food_quantity) [burger](food_item)
+    - [three](food_quantity) [burger](food_item) please
+    - [three](food_quantity) [burger](food_item) thank you
+    - i want [three](food_quantity) [bun](food_item) 
+    - ill have [three](food_quantity) [bun](food_item)
+    - [three](food_quantity) [bun](food_item) please
+    - [three](food_quantity) [bun](food_item) thank you
+    - i want [three](food_quantity) [noodles](food_item) 
+    - ill have [three](food_quantity) [noodles](food_item)
+    - [three](food_quantity) [noodles](food_item) please
+    - [three](food_quantity) [noodles](food_item) thank you
+    - i want [1](food_quantity) [pizza](food_item) 
+    - ill have [1](food_quantity) [pizza](food_item)
+    - [1](food_quantity) [pizza](food_item) please
+    - [1](food_quantity) [pizza](food_item) thank you
+    - i want [1](food_quantity) [burger](food_item) 
+    - ill have [1](food_quantity) [burger](food_item)
+    - [1](food_quantity) [burger](food_item) please
+    - [1](food_quantity) [burger](food_item) thank you
+    - i want [1](food_quantity) [bun](food_item) 
+    - ill have [1](food_quantity) [bun](food_item)
+    - [1](food_quantity) [bun](food_item) please
+    - [1](food_quantity) [bun](food_item) thank you
+    - i want [1](food_quantity) [noodles](food_item) 
+    - ill have [1](food_quantity) [noodles](food_item)
+    - [1](food_quantity) [noodles](food_item) please
+    - [1](food_quantity) [noodles](food_item) thank you
+    - i want [2](food_quantity) [pizza](food_item) 
+    - ill have [2](food_quantity) [pizza](food_item)
+    - [2](food_quantity) [pizza](food_item) please
+    - [2](food_quantity) [pizza](food_item) thank you
+    - i want [2](food_quantity) [burger](food_item) 
+    - ill have [2](food_quantity) [burger](food_item)
+    - [2](food_quantity) [burger](food_item) please
+    - [2](food_quantity) [burger](food_item) thank you
+    - i want [2](food_quantity) [bun](food_item) 
+    - ill have [2](food_quantity) [bun](food_item)
+    - [2](food_quantity) [bun](food_item) please
+    - [2](food_quantity) [bun](food_item) thank you
+    - i want [2](food_quantity) [noodles](food_item) 
+    - ill have [2](food_quantity) [noodles](food_item)
+    - [2](food_quantity) [noodles](food_item) please
+    - [2](food_quantity) [noodles](food_item) thank you
+    - i want [3](food_quantity) [pizza](food_item) 
+    - ill have [3](food_quantity) [pizza](food_item)
+    - [3](food_quantity) [pizza](food_item) please
+    - [3](food_quantity) [pizza](food_item) thank you
+    - i want [3](food_quantity) [burger](food_item) 
+    - ill have [3](food_quantity) [burger](food_item)
+    - [3](food_quantity) [burger](food_item) please
+    - [3](food_quantity) [burger](food_item) thank you
+    - i want [3](food_quantity) [bun](food_item) 
+    - ill have [3](food_quantity) [bun](food_item)
+    - [3](food_quantity) [bun](food_item) please
+    - [3](food_quantity) [bun](food_item) thank you
+    - i want [3](food_quantity) [noodles](food_item) 
+    - ill have [3](food_quantity) [noodles](food_item)
+    - [3](food_quantity) [noodles](food_item) please
+    - [3](food_quantity) [noodles](food_item) thank you
 
