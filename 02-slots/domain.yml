@@ -8,7 +8,7 @@ intents:
 - greet
 - affirm
 - deny
-- submit_food_order
+# - submit_food_order
 - food_order
 - check_order
 - want_to_order

@@ -68,7 +68,7 @@ nlu:
     - check order
     - check my order
 
-- intent: 
+- intent: want_to_order
   examples: |
     - order food
     - order
