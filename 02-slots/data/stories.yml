@@ -2,6 +2,7 @@ version: "3.1"
 
 stories:
 
+#ideal conversation flow
 - story: submit order and check order
   steps:
   - intent: greet
@@ -15,18 +16,17 @@ stories:
   - slot_was_set:
     - food_item: pizza
     - food_quantity: one
-  - action: utter_order_received
-  - intent: check_order
-  - action: action_say_order
-  - intent: goodbye
-  - action: utter_goodbye
-
-
-- story: checking order without prior order and proceeds to order
-  steps:
-  - intent: check_order
-  - action: action_say_order
+  - action: action_say_current_order
   - intent: affirm
+  - action: action_submit_order
+  - intent: goodbye
+  - action: utter_goodbye 
+
+
+
+- story: straight away want to order
+  steps:
+  - intent: want_to_order
   - action: utter_ask_food_order 
   - intent: food_order
     entities:
@@ -35,14 +35,21 @@ stories:
   - slot_was_set:
     - food_item: pizza
     - food_quantity: one
-  - action: utter_order_received
+  - action: action_say_current_order
+  - intent: affirm
+  - action: action_submit_order
   - intent: goodbye
-  - action: utter_goodbye
+  - action: utter_goodbye 
 
-
-- story: checking order without prior order and do not want to order 
+- story: order is wrongly captured
   steps:
-  - intent: check_order
-  - action: action_say_order
+  - intent: food_order
+    entities:
+      - food_item: pizza
+      - food_quantity: one
+  - slot_was_set:
+    - food_item: pizza
+    - food_quantity: one
+  - action: action_say_current_order
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_goodbye 

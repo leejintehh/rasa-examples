@@ -8,15 +8,16 @@ intents:
 - greet
 - affirm
 - deny
-# - submit_food_order
-- food_order
-- check_order
-- want_to_order
+
+- want_to_order #after greeting/ i want to order food
+- check_current_order #check if the slots food_item and food_quantity is filled
+- food_order #slots to extract the food_item and food_quantity
 
 
 entities:
 - food_item
 - food_quantity
+
 slots:
   food_item:
     type: text
@@ -30,19 +31,19 @@ slots:
     mappings:
     - type: from_entity
       entity: food_quantity
+    
 responses:
   utter_greet:
-  - text: Hi, how may I assist you?
+  - text: Hi, welcome to food ordering bot, would you like to order food or check order?
   utter_goodbye:
   - text: Bye
 
   utter_ask_food_order:
   - text: Sure, what is your order?
-  utter_order_received:
-  - text: Order received!
 
 actions:
-- action_say_order
+- action_submit_order
+- action_say_current_order
 - utter_ask_food_order
 - utter_goodbye
 - utter_greet

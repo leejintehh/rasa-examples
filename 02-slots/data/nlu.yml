@@ -55,7 +55,15 @@ nlu:
     - noo
     - n
 
-- intent: check_order
+- intent: want_to_order
+  examples: |
+    - order food
+    - order 
+    - buy food
+    - i want to order
+    - i want to order food
+
+- intent: check_current_order
   examples: |
     - what is my food order
     - tell me my food order
@@ -68,13 +76,7 @@ nlu:
     - check order
     - check my order
 
-- intent: want_to_order
-  examples: |
-    - order food
-    - order
-    - buy food
-    - submit order
-    - send order
+
 
 - intent: food_order
   examples: |
